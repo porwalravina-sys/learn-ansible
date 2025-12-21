@@ -1,0 +1,9 @@
+- name: Variables
+  hosts: localhost
+  connection: local
+  vars:
+    URL: play.google.com
+  tasks:
+    - name: Print a variable
+      ansible.module.debug:
+        msg: var URL is {{ URL }}
