@@ -1,0 +1,17 @@
+- name: Condition
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Print if value is greater than 10
+      when: VAL | int > 10
+      ansible.builtin.debug:
+        msg: "{{ VAL }}" is greater than 10
+
+    - name: Print if value is less than 10
+      ansible.builtin.debug:
+        msg: "{{ VAL }}" is less than 10
+      when: VAL | int < 10
+
+# in yaml key position does not matter, meaning when keyword is used after name as well as end of task it is not a problem
+
+
