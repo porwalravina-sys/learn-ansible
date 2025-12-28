@@ -15,5 +15,17 @@
       ansible.module.debug:
         msg: var URL is {{ URL }}
 
+    - name: Task output
+      ansible.module.shell: ls
+      register: out
+
+    - name: printout
+      ansible.module.debug:
+        msg: "{{ out }}"
+
+    - name: print fact
+      ansible.module.debug:
+        msg: "{{ ansible_architecture }}"
+
   roles:
     - sample
